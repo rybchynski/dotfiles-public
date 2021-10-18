@@ -40,6 +40,7 @@ endif
 " For JS/JSX
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'leafOfTree/vim-vue-plugin'
 
 call plug#end()
 
