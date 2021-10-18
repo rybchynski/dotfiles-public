@@ -75,6 +75,7 @@ runtime ./maps.vim
 if exists("&termguicolors") && exists("&winblend")
 	syntax enable
 	set termguicolors
+  runtime ./colors/Gruvbox.vim
 	colorscheme gruvbox
 endif
 " }}}
