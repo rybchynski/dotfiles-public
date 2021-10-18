@@ -19,11 +19,6 @@ local check_back_space = function()
     local col = vim.fn.col(".") - 1
     return col == 0 or vim.fn.getline("."):sub(col, col):match("%s") ~= nil
 end
-require'cmp'.setup {
-  sources = {
-    { name = 'emoji' }
-  }
-}
 
 cmp.setup {
 
@@ -37,9 +32,6 @@ cmp.setup {
                 buffer = "[Buffer]",
                 nvim_lsp = "[LSP]",
                 ultisnips = "[UltiSnips]",
-                nvim_lua = "[Lua]",
-                cmp_tabnine = "[TabNine]",
-                look = "[Look]",
                 path = "[Path]",
                 emoji = "[Emoji]"
             })[entry.source.name]
@@ -82,9 +74,10 @@ cmp.setup {
     },
     snippet = {expand = function(args) vim.fn["UltiSnips#Anon"](args.body) end},
     sources = {
-        {name = 'buffer'}, {name = 'nvim_lsp'}, {name = "ultisnips"},
-        {name = "nvim_lua"}, {name = "look"}, {name = "path"},
-        {name = 'cmp_tabnine'}, 
+        {name = 'buffer'},
+        {name = 'nvim_lsp'},
+        {name = "ultisnips"},
+        {name = "path"},
         {name = "emoji"}
     },
     completion = {completeopt = 'menu,menuone,noinsert', autocomplete = false}
@@ -96,15 +89,6 @@ require("nvim-autopairs.completion.cmp").setup({
     map_complete = true,
     auto_select = true
 })
-
--- TabNine
-local tabnine = require('cmp_tabnine.config')
-tabnine:setup({max_lines = 1000, max_num_results = 20, sort = true})
-
--- Database completion
-vim.api.nvim_exec([[
-autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
-]], false)
 EOF
 
 lua << EOF
