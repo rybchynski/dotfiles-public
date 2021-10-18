@@ -30,6 +30,7 @@ if has("nvim")
     Plug 'hrsh7th/cmp-path'
     Plug 'hrsh7th/cmp-emoji'
     Plug 'mattn/emmet-vim'
+    Plug 'glepnir/dashboard-nvim'
 endif
 
 " For JS/JSX

@@ -93,3 +93,5 @@ let g:user_emmet_mode='n'
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,vue EmmetInstall
 " }}}
+
+let g:dashboard_default_executive ='telescope' 
