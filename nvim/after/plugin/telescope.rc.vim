@@ -4,6 +4,7 @@ nnoremap <silent> ;f <Cmd>Telescope find_files<CR>
 nnoremap <silent> ;r <Cmd>Telescope live_grep<CR>
 nnoremap <silent> \\ <Cmd>Telescope buffers<CR>
 nnoremap <silent> ;; <Cmd>Telescope help_tags<CR>
+nnoremap <silent> ;b <Cmd>Telescope file_browser<CR>
 
 " Find files using Telescope command-line sugar.
 nnoremap <silent> <leader>;f :DashboardFindFile<CR>
