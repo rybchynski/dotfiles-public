@@ -7,9 +7,9 @@ set scrolloff=10
 set modifiable
 
 set title
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 set autoindent
 set fileformat=unix
@@ -18,8 +18,6 @@ set shell=zsh
 set ignorecase 
 set smarttab
 filetype plugin indent on
-set shiftwidth=2
-set tabstop=2
 " Auto indent
 set ai
 " Smart indent
@@ -87,11 +85,17 @@ let g:UltiSnipsListSnippets="<C-y>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "custom_snippets"]
 " }}}
 
-" Ultisnips " {{{
+" Emmet " {{{
 " ---------------------------------------------------------------------
 let g:user_emmet_mode='n'
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,vue EmmetInstall
 " }}}
-
+" Dashboard " {{{
+" ---------------------------------------------------------------------
 let g:dashboard_default_executive ='telescope' 
+" }}}
+
+" signify plugin 
+set updatetime=100
+

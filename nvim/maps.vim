@@ -8,8 +8,15 @@ map gn :bn<cr>
 map gp :bp<cr>
 map gw :Bclose<cr>
 map gW :Bclose!<cr>
+nnoremap U <C-R>
 
 nmap <Leader><space> :nohlsearch<cr>
+
+" --------------------------------------------------------
+" Easymotion
+map ; <Plug>(easymotion-prefix)
+map ;st <Plug>(easymotion-s2)
+map ;. <Plug>(easymotion-repeat)
 
 " --------------------------------------------------------
 " NERDTree
@@ -25,7 +32,6 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 " --------------------------------------------------------
 " Delete without yank
-nnoremap <leader>d "_d
 nnoremap x "_x
 
 " --------------------------------------------------------

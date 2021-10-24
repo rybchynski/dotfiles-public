@@ -31,6 +31,8 @@ if has("nvim")
     Plug 'hrsh7th/cmp-emoji'
     Plug 'mattn/emmet-vim'
     Plug 'glepnir/dashboard-nvim'
+    Plug 'easymotion/vim-easymotion'
+    Plug 'mhinz/vim-signify'
 endif
 
 " For JS/JSX

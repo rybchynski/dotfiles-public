@@ -1,17 +1,17 @@
 if !exists('g:loaded_telescope') | finish | endif
 
-nnoremap <silent> ;f <Cmd>Telescope find_files<CR>
-nnoremap <silent> ;r <Cmd>Telescope live_grep<CR>
+nnoremap <silent> \f <Cmd>Telescope find_files<CR>
+nnoremap <silent> \r <Cmd>Telescope live_grep<CR>
 nnoremap <silent> \\ <Cmd>Telescope buffers<CR>
-nnoremap <silent> ;; <Cmd>Telescope help_tags<CR>
-nnoremap <silent> ;b <Cmd>Telescope file_browser<CR>
+" nnoremap <silent> ;; <Cmd>Telescope help_tags<CR>
+nnoremap <silent> \b <Cmd>Telescope file_browser<CR>
 
 " Find files using Telescope command-line sugar.
 nnoremap <silent> <leader>;f :DashboardFindFile<CR>
 nnoremap <silent> <leader>;r :Telescope live_grep<cr>
 nnoremap <silent> <leader>\\ :Telescope buffers<cr>
 nnoremap <silent> <leader>;; :Telescope help_tags<cr>
-nnoremap <silent> <leader>fh :DashboardFindHistory<CR>
+noremap <silent> <leader>fh :DashboardFindHistory<CR>
 nnoremap <silent> <leader>fc :DashboardChangeColorscheme<CR>
 nnoremap <silent> <leader>fw :DashboardFindWord<CR>
 nnoremap <silent> <leader>fb :DashboardJumpMark<CR>
