@@ -14,9 +14,9 @@ nmap <Leader><space> :nohlsearch<cr>
 
 " --------------------------------------------------------
 " Easymotion
-map ; <Plug>(easymotion-prefix)
-map ;st <Plug>(easymotion-s2)
-map ;. <Plug>(easymotion-repeat)
+map <space><space> <Plug>(easymotion-prefix)
+map <space><space>st <Plug>(easymotion-s2)
+map <space><space>. <Plug>(easymotion-repeat)
 
 " --------------------------------------------------------
 " NERDTree
