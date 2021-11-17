@@ -15,6 +15,7 @@ alias zshconfig="code ~/.zshrc"
 alias catconfig="sed -e '/^#/d' -e '/^$/d' "
 alias catstringnumber="awk 'END{print NR}' "
 alias openf="open -a ForkLift "
+alias compress="tar -czvf "
 
 alias mv="mv -iv"
 alias cp="cp -riv"
@@ -104,4 +105,5 @@ alias vhalt='vagrant halt'
 
 #git
 alias g='git'
+alias gitconfig="bat ~/.gitconfig"
 
