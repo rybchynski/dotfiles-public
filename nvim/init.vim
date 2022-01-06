@@ -62,7 +62,7 @@ if exists("&termguicolors") && exists("&winblend")
 	set termguicolors
 " colorscheme Gruvbox
 " colorscheme onedark
-"  colorscheme nord
+" colorscheme nord
   colorscheme palenight
 endif
 " }}}

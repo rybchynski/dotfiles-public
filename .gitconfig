@@ -22,8 +22,10 @@
     d = diff
     co = checkout
     cob = checkout -b
+    cop = "!git checkout $(git branch | peco)"
     ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
     pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD)"
+    vrf = "!vim -nw -Q $(git log --pretty=format: --name-only --since='7 days ago' | peco )"
 [hub]
     protoocol = https
 [github]

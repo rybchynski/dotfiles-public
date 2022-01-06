@@ -2,6 +2,7 @@
 export ZSH=$HOME/.oh-my-zsh
 export PATH="$(brew --prefix)/bin:$PATH"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
+export PATH="$PATH:$HOME/.drupal/drupal_code_standards/vendor/bin"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$HOME/.yarn/bin"
 export PATH="$PATH:$HOME/Documents/code/bash/bin"
@@ -24,11 +25,11 @@ export PATH="$PATH:$(du "$HOME/.scripts" | cut -f2 | tr '\n' ':' | sed 's/:*$//'
 
 
 # ZSH_THEME="powerlevel9k/powerlevel9k"
-# ZSH_THEME="agnoster"
+ZSH_THEME="agnoster"
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="pygmalion-virtualenv"
 # ZSH_THEME="bira"
-ZSH_THEME="awesomepanda"
+# ZSH_THEME="awesomepanda"
 
 # jreese, frisk, amuse, agnoster, af-magic, avit, robbyrussell, juanghurtado, norm, bullet-train
 # bira, gnzh, powerlevel9k/powerlevel9k
