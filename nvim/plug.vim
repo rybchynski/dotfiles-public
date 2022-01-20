@@ -8,10 +8,12 @@ call plug#begin()
 
 if has("nvim")
     Plug 'neovim/nvim-lspconfig'
+    Plug 'epilande/vim-es2015-snippets'
     Plug 'hrsh7th/nvim-cmp'
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'tami5/lspsaga.nvim'
     Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+    Plug 'mlaursen/vim-react-snippets'
     Plug 'onsails/lspkind-nvim'
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
@@ -39,6 +41,7 @@ endif
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'leafOfTree/vim-vue-plugin'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 call plug#end()
 
