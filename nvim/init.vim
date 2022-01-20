@@ -61,9 +61,10 @@ if exists("&termguicolors") && exists("&winblend")
 	syntax enable
 	set termguicolors
 " colorscheme Gruvbox
-" colorscheme onedark
+ colorscheme onedark
 " colorscheme nord
-  colorscheme palenight
+" colorscheme palenight
+"  colorscheme NeoSolarized 
 endif
 " }}}
 
@@ -87,9 +88,11 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "custom_snippets"]
 
 " Emmet " {{{
 " ---------------------------------------------------------------------
-let g:user_emmet_mode='n'
+let g:user_emmet_mode='in'
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,vue EmmetInstall
+let g:user_emmet_leader_key='<C-K>'
+autocmd FileType html,css,vue,ts,js,jsx,tsx,javascriptreact EmmetInstall
+
 " }}}
 " Dashboard " {{{
 " ---------------------------------------------------------------------
