@@ -29,14 +29,29 @@ set si
 au BufNewFile,BufRead *.es6 setf javascript
 " TypeScript
 au BufNewFile,BufRead *.tsx setf typescriptreact
+au BufNewFile,BufRead *.ts setf typescript
 " Markdown
 au BufNewFile,BufRead *.md set filetype=markdown
 " Vuejs
 au BufNewFile,BufRead *.vue setf vue
 
-set suffixesadd=.js,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
+set suffixesadd=.js,.ts,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
 
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
+
+" Drupal related.
+if has("autocmd")
+  " Drupal *.module and *.install files.
+  augroup module
+    autocmd BufRead,BufNewFile *.module set filetype=php
+    autocmd BufRead,BufNewFile *.theme set filetype=php
+    autocmd BufRead,BufNewFile *.install set filetype=php
+    autocmd BufRead,BufNewFile *.test set filetype=php
+    autocmd BufRead,BufNewFile *.inc set filetype=php
+    autocmd BufRead,BufNewFile *.profile set filetype=php
+    autocmd BufRead,BufNewFile *.view set filetype=php
+  augroup END
+endif
 
 "}}}
 
@@ -91,7 +106,7 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "custom_snippets"]
 let g:user_emmet_mode='in'
 let g:user_emmet_install_global = 0
 let g:user_emmet_leader_key='<C-K>'
-autocmd FileType html,css,vue,ts,js,jsx,tsx,javascriptreact EmmetInstall
+autocmd FileType html,css,vue,ts,js,jsx,tsx,javascriptreact,javascript,typescriptreact EmmetInstall
 
 " }}}
 " Dashboard " {{{
