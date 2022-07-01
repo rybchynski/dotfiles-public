@@ -1,7 +1,7 @@
 # Provides aliases for fzf
-ses() {du -a ~/.dotfiles-public/* ~/.config/* | awk '{print $2}' | fzf --height 50% --border --layout=reverse | xargs subl;}
+ses() {du -a ~/.dotfiles/* ~/.config/* | awk '{print $2}' | fzf --height 50% --border --layout=reverse | xargs subl;}
 
-sev() {du -a ~/.dotfiles-public/* ~/.config/* | awk '{print $2}' | fzf --height 50% --border --layout=reverse | xargs -o vim;}
+sev() {du -a ~/.dotfiles/* ~/.config/* | awk '{print $2}' | fzf --height 50% --border --layout=reverse | xargs -o vim;}
 
 # find-in-file - usage: fif <SEARCH_TERM>
 fif() {

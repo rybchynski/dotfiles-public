@@ -84,11 +84,11 @@ cmp.setup {
 }
 
 -- Autopairs
-require("nvim-autopairs.completion.cmp").setup({
-    map_cr = true,
-    map_complete = true,
-    auto_select = true
-})
+-- require("nvim-autopairs.completion.cmp").setup({
+--    map_cr = true,
+--    map_complete = true,
+--    auto_select = true
+--})
 EOF
 
 lua << EOF
