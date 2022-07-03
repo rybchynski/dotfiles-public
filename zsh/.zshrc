@@ -25,11 +25,11 @@ export PATH="$PATH:$(du "$HOME/.scripts" | cut -f2 | tr '\n' ':' | sed 's/:*$//'
 
 
 # ZSH_THEME="powerlevel9k/powerlevel9k"
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="pygmalion-virtualenv"
 # ZSH_THEME="bira"
-# ZSH_THEME="awesomepanda"
+ ZSH_THEME="awesomepanda"
 
 # jreese, frisk, amuse, agnoster, af-magic, avit, robbyrussell, juanghurtado, norm, bullet-train
 # bira, gnzh, powerlevel9k/powerlevel9k
@@ -184,3 +184,4 @@ source $HOME/.fzf_aliases
 
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
+export PATH=/usr/local/Cellar/ruby/3.1.1/bin:$PATH

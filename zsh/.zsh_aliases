@@ -1,7 +1,8 @@
 #
 #systems
 alias install='brew install'
-alias remove='sudo rm -rf'
+alias remove='rm -rf'
+alias sremove='sudo rm -rf'
 alias tremove='gshred -uv -n23'
 alias s='sudo'
 alias composer="php /usr/local/bin/composer.phar"
@@ -21,9 +22,11 @@ alias mv="mv -iv"
 alias cp="cp -riv"
 alias mkdir="mkdir -vp"
 alias c="clear"
+alias stat="stat -x"
 
 # ls only hidden files
 alias l.="ls -d .*"
+alias j=z
 
 # short history mode
 alias h="history"
@@ -52,6 +55,9 @@ alias iplocal='ifconfig en0 | grep --word-regexp inet | awk "{print $2}"'
 
 # print out the public IP address
 alias ippub="dig +short myip.opendns.com @resolver1.opendns.com"
+
+# display forecast according to your current location.
+alias forecast="curl wttr.in"
 
 # generate random 20 character password using OpenSSL
 alias randpass="openssl rand -base64 20"
@@ -96,6 +102,7 @@ alias dc='docker-compose'
 alias drush='docker-compose exec php drush'
 alias ddrupal='docker-compose exec php drupal'
 alias dcomposer='docker-compose exec php composer'
+alias ds='docker-sync'
 
 #vagrant
 alias vssh='vagrant ssh'
