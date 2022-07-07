@@ -131,7 +131,7 @@ local on_attach = function(client, bufnr)
   end
    --protocol.SymbolKind = { }
    require('lspkind').init({
-    with_text = false,
+    mode = 'symbol_text',
 
     -- default symbol map
     -- can be either 'default' (requires nerd-fonts font) or
@@ -173,10 +173,16 @@ local on_attach = function(client, bufnr)
 })
 end
 
+nvim_lsp.tsserver.setup {
+  on_attach = on_attach,
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  capabilities = capabilities
+}
+
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'vuels', 'jsonls', 'gopls', 'tsserver'}
+local servers = { 'pyright', 'vuels', 'jsonls', 'gopls'}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -185,7 +191,70 @@ for _, lsp in ipairs(servers) do
     }
   }
 end
+
+
+nvim_lsp.diagnosticls.setup {
+  on_attach = on_attach,
+  filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'pandoc' },
+  init_options = {
+    linters = {
+      eslint = {
+        command = 'eslint_d',
+        rootPatterns = { '.git' },
+        debounce = 100,
+        args = { '--stdin', '--stdin-filename', '%filepath', '--format', 'json' },
+        sourceName = 'eslint_d',
+        parseJson = {
+          errorsRoot = '[0].messages',
+          line = 'line',
+          column = 'column',
+          endLine = 'endLine',
+          endColumn = 'endColumn',
+          message = '[eslint] ${message} [${ruleId}]',
+          security = 'severity'
+        },
+        securities = {
+          [2] = 'error',
+          [1] = 'warning'
+        }
+      },
+    },
+    filetypes = {
+      javascript = 'eslint',
+      javascriptreact = 'eslint',
+      typescript = 'eslint',
+      typescriptreact = 'eslint',
+    },
+    formatters = {
+      eslint_d = {
+        command = 'eslint_d',
+        rootPatterns = { '.git' },
+        args = { '--stdin', '--stdin-filename', '%filename', '--fix-to-stdout' },
+        rootPatterns = { '.git' },
+      },
+      prettier = {
+        command = 'prettier_d_slim',
+        rootPatterns = { '.git' },
+        -- requiredFiles: { 'prettier.config.js' },
+        args = { '--stdin', '--stdin-filepath', '%filename' }
+      }
+    },
+    formatFiletypes = {
+      css = 'prettier',
+      javascript = 'prettier',
+      javascriptreact = 'prettier',
+      json = 'prettier',
+      scss = 'prettier',
+      less = 'prettier',
+      typescript = 'prettier',
+      typescriptreact = 'prettier',
+      json = 'prettier',
+    }
+  }
+}
 EOF
+
+
 
 
 " ----------------------------------------------------------------------------------------
