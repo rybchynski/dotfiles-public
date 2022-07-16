@@ -257,6 +257,7 @@ EOF
 
 
 
+
 " ----------------------------------------------------------------------------------------
 "  WORK WITH VIM'S BUFFER.
 " Delete buffer while keeping window layout (don't close buffer's windows).

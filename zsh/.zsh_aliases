@@ -3,7 +3,6 @@ alias install='sudo apt install'
 alias remove='sudo rm -rf'
 alias tremove='shred -uv -n27'
 alias s='sudo'
-alias composer="php /usr/local/bin/composer.phar"
 alias r="ranger"
 alias zshconfig="code ~/.zshrc"
 alias tldr="tldr -t base16"
@@ -17,10 +16,10 @@ alias c="clear"
 alias diff="bat -d"
 
 # remap fucked z
-alias j=z
+alias j="z"
 
 # alias for alsamixer
-alias alla=alsamixer
+alias alsa="alsamixer"
 
 # wireguard
 alias wgup="sudo wg-quick up wg0"
@@ -79,11 +78,16 @@ alias gitconfig="bat ~/.gitconfig"
 # exa
 # alias ll='exa -l -g --icons'
 # alias lla='exa -l -g --icons -a'
-alias ls='exa --icons --oneline --binary'
-alias ll='ls -l -g --icons --git --header --modified --sort=mod --reverse'
+alias ls='exa --oneline --binary'
+alias ll='ls -l -g --git --header --modified --sort=mod --reverse'
 alias lll='ll --accessed --created'
 alias lt='ll --tree --level=2'
 alias lla='lll -a'
 
 # other
 alias xp='xprop | grep "WM_WINDOW_ROLE\|WM_CLASS" && echo "WM_CLASS(STRING) = \"NAME\", \"CLASS\""'
+
+# my super productivity aliases:
+alias open-todo='vim /home/ryba/Documents/libraries/my-zettel/Base/todo.md'
+alias open-work-logs='vim /home/ryba/Documents/libraries/my-zettel/WorkLogs'
+
