@@ -76,10 +76,16 @@ if exists("&termguicolors") && exists("&winblend")
 	syntax enable
 	set termguicolors
 " colorscheme Gruvbox
- colorscheme onedark
+" colorscheme onedark
 " colorscheme nord
 " colorscheme palenight
 "  colorscheme NeoSolarized 
+"colorscheme nightfox
+"colorscheme dayfox
+"colorscheme dawnfox
+"colorscheme duskfox
+"colorscheme nordfox
+colorscheme terafox
 endif
 " }}}
 

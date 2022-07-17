@@ -35,6 +35,7 @@ if has("nvim")
     Plug 'glepnir/dashboard-nvim'
     Plug 'easymotion/vim-easymotion'
     Plug 'mhinz/vim-signify'
+    Plug 'EdenEast/nightfox.nvim'
 endif
 
 " For JS/JSX
