@@ -117,3 +117,6 @@ alias vhalt='vagrant halt'
 alias g='git'
 alias gitconfig="bat ~/.gitconfig"
 
+# aliases for my super productivity app:
+alias open-todo='vim /Users/ryba/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/MyZetMaster/Base/todo.md'
+
