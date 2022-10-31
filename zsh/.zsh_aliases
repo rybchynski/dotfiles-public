@@ -113,4 +113,5 @@ alias vhalt='vagrant halt'
 #git
 alias g='git'
 alias gitconfig="bat ~/.gitconfig"
+alias lg='lazygit'
 
