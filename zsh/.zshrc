@@ -18,6 +18,13 @@ export NVM_DIR="$HOME/.nvm"
 # Add my scripts folder to the PATH
 export PATH="$PATH:$(du "$HOME/.scripts" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 
+# Golang specific
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin
+
+export GOPATH=/home/ryba/golib
+export PATH=$PATH:$GOPATH/bin
+export GOPATH=$GOPATH:/home/ryba/Documents/code/go
 
 # ZSH_THEME="powerlevel9k/powerlevel9k"
 # ZSH_THEME="agnoster"

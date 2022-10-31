@@ -75,10 +75,10 @@ runtime ./maps.vim
 if exists("&termguicolors") && exists("&winblend")
 	syntax enable
 	set termguicolors
- colorscheme Gruvbox
+" colorscheme Gruvbox
 " colorscheme onedark
 " colorscheme nord
-" colorscheme palenight
+ colorscheme palenight
 "  colorscheme NeoSolarized 
 endif
 " }}}
