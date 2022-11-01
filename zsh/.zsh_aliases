@@ -75,6 +75,7 @@ alias dcomposer='docker-compose exec php composer'
 # git
 alias g='git'
 alias gitconfig="bat ~/.gitconfig"
+alias lg='lazygit'
 
 # exa
 # alias ll='exa -l -g --icons'
