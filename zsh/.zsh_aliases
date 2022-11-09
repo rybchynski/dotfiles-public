@@ -102,7 +102,8 @@ alias dce='docker-compose exec'
 alias dcup='docker-compose up -d'
 alias dstop='docker-compose stop'
 alias dc='docker-compose'
-alias drush='docker-compose exec php drush'
+# alias drush='docker-compose exec php drush'
+alias drush='ddev drush'
 alias ddrupal='docker-compose exec php drupal'
 alias dcomposer='docker-compose exec php composer'
 alias ds='docker-sync'
@@ -116,6 +117,7 @@ alias vhalt='vagrant halt'
 #git
 alias g='git'
 alias gitconfig="bat ~/.gitconfig"
+alias lg="lazygit"
 
 # aliases for my super productivity app:
 alias open-todo='vim /Users/ryba/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/MyZetMaster/Base/todo.md'
