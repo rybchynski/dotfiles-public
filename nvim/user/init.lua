@@ -25,8 +25,12 @@ local config = {
     -- },
   },
 
+
   -- Set colorscheme to use
-  colorscheme = "default_theme",
+  -- colorscheme = "default_theme",
+  -- colorscheme = 'onedark',
+  -- colorscheme = 'catppuccin',
+     colorscheme = 'onedark',
 
   -- Add highlight groups in any theme
   highlights = {
@@ -246,7 +250,10 @@ local config = {
       {
            -- triggered with Ctrl + Y + ,
           "mattn/emmet-vim"
-      ,}
+      },
+      {"navarasu/onedark.nvim"},
+      {'catppuccin/nvim'}
+
     },
     -- All other entries override the require("<key>").setup({...}) call for default plugins
     ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
