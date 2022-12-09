@@ -41,7 +41,10 @@
     prompt = false
 
 [merge]
-    tool = meld
-[mergetool "meld"]
-    cmd = meld \"$LOCAL\" \"$MERGED\" \"$REMOTE\" --output \"$MERGED\"
+	tool = meld
+#[mergetool "meld"]
+#    cmd = meld \"$LOCAL\" \"$MERGED\" \"$REMOTE\" --output \"$MERGED\"
+[user]
+	name = "Yuriy Rybchynski"
+	email = "yuriyrybchynski@gmail.com"
 
