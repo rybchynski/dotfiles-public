@@ -70,8 +70,9 @@ alias dstop='docker-compose stop'
 alias dc='docker-compose'
 # alias drush='docker-compose exec php drush'
 alias drush='ddev drush'
-alias ddrupal='docker-compose exec php drupal'
-alias dcomposer='docker-compose exec php composer'
+# alias ddrupal='docker-compose exec php drupal'
+# alias dcomposer='docker-compose exec php composer'
+alias dcomposer='ddev composer'
 
 # git
 alias g='git'

@@ -30,7 +30,8 @@ local config = {
   -- colorscheme = "default_theme",
   -- colorscheme = 'onedark',
   -- colorscheme = 'catppuccin',
-     colorscheme = 'onedark',
+  -- colorscheme = 'onedark',
+  colorscheme = 'tokyonight',
 
   -- Add highlight groups in any theme
   highlights = {
@@ -209,7 +210,7 @@ local config = {
       ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
       -- quick save
-      ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+      ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
     },
     t = {
       -- setting a mapping to false will disable it
@@ -242,18 +243,18 @@ local config = {
       --   end,
       -- },
       {
-          "HerringtonDarkholme/yats.vim"
+        "HerringtonDarkholme/yats.vim"
       },
       {
-          "tpope/vim-fugitive"
+        "tpope/vim-fugitive"
       },
       {
-           -- triggered with Ctrl + Y + ,
-          "mattn/emmet-vim"
+        -- triggered with Ctrl + Y + ,
+        "mattn/emmet-vim"
       },
-      {"navarasu/onedark.nvim"},
-      {'catppuccin/nvim'}
-
+      { "navarasu/onedark.nvim" },
+      { 'catppuccin/nvim' },
+      { 'folke/tokyonight.nvim' },
     },
     -- All other entries override the require("<key>").setup({...}) call for default plugins
     ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
