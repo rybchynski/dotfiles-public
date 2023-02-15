@@ -19,6 +19,9 @@ alias diff="bat -d"
 # remap fucked z
 alias j="z"
 
+# pnpm
+alias pn="pnpm"
+
 # alias for alsamixer
 alias alsa="alsamixer"
 
