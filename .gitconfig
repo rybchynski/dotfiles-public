@@ -46,5 +46,5 @@
 #    cmd = meld \"$LOCAL\" \"$MERGED\" \"$REMOTE\" --output \"$MERGED\"
 [user]
 	name = "Yuriy Rybchynski"
-	email = "yuriyrybchynski@gmail.com"
+	email = "yuriyrybchynski.dev@gmail.com"
 
