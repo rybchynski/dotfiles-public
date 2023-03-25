@@ -76,10 +76,15 @@ alias dcup='docker-compose up -d'
 alias dstop='docker-compose stop'
 alias dc='docker-compose'
 # alias drush='docker-compose exec php drush'
-alias drush='ddev drush'
 # alias ddrupal='docker-compose exec php drupal'
 # alias dcomposer='docker-compose exec php composer'
+
+# ddev
+alias drush='ddev drush'
 alias dcomposer='ddev composer'
+alias xon='ddev xdebug on'
+alias xoff='ddev xdebug off'
+
 
 # git
 alias g='git'
