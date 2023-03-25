@@ -1,0 +1,57 @@
+xkb_keymap {
+	xkb_keycodes  { include "evdev+aliases(qwerty)"	};
+	xkb_types     { include "complete"	};
+	xkb_compat    { include "complete"	};
+	xkb_symbols   { 
+		include "pc+us+ua:2+inet(evdev)"	
+		name[group1]="English (US)";
+		name[group2]="Ukrainian";
+
+	key <CAPS> { 
+	    type[group1]="ONE_LEVEL",
+	    symbols[group1] =[ ISO_Level3_Shift ],
+	    symbols[group2] =[ ISO_Level3_Shift ] 
+	    };
+	
+	key <AD02> {
+		symbols[group1] = [ w, W, grave],
+		symbols[group2] = [ Cyrillic_tse, Cyrillic_TSE, grave]
+	};
+
+	key <AC06> {
+		symbols[group1] = [ h, H, Left],
+		symbols[group2] = [ Cyrillic_er, Cyrillic_ER, Left]
+	};
+
+
+	key <AC09> {
+		symbols[group1] = [ l, L, Right ],
+		symbols[group2] = [ Cyrillic_de, Cyrillic_DE, Right]
+	};
+	
+	key <AC08> {
+		symbols[group1] = [ k, K, Up],
+		symbols[group2] = [ Cyrillic_el, Cyrillic_EL, Up]
+	};
+
+
+	key <AC07> {
+		symbols[group1] = [ j, J, Down],
+		symbols[group2] = [ Cyrillic_o, Cyrillic_O, Down]
+	};
+
+
+	key <AD08> {
+		symbols[group1] = [ i, I, Home],
+		symbols[group2] = [ Cyrillic_sha, Cyrillic_SHA, Home]
+	};
+
+	key <AD09> {
+		symbols[group1] = [ o, O, End],
+		symbols[group2] = [ Cyrillic_shcha, Cyrillic_SHCHA, End]
+	};
+
+	};
+	xkb_geometry  { include "pc(pc105)"	};
+};
+

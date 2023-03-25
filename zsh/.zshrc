@@ -231,3 +231,5 @@ source $HOME/.fzf_aliases
 source $HOME/.fzf/shell/key-bindings.zsh
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+xkbcomp $HOME/.config/xkb/config $DISPLAY && clear
