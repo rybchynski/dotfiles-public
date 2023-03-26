@@ -51,6 +51,17 @@ xkb_keymap {
 		symbols[group2] = [ Cyrillic_shcha, Cyrillic_SHCHA, End]
 	};
 
+
+	key <AC10> {
+		symbols[group1] = [ semicolon, colon, BackSpace ],
+		symbols[group2] = [ Cyrillic_zhe, Cyrillic_ZHE, BackSpace ]
+	};
+
+	key <AC11> {
+		symbols[group1] = [ semicolon, colon, Delete ],
+		symbols[group2] = [ Ukrainian_ie, Ukrainian_IE, Delete ]
+	};
+
 	};
 	xkb_geometry  { include "pc(pc105)"	};
 };
