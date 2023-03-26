@@ -142,7 +142,7 @@ formatters.setup {
   {
     command = "prettier",
     filetypes = { "typescript", "typescriptreact", "vue", "javascript", "css", "scss", "php", "go", "json",
-      "javascriptreact", "markdown" }
+      "javascriptreact", "markdown", "html" }
   }
 }
 -- formatters.setup {
