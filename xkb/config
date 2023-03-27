@@ -58,7 +58,7 @@ xkb_keymap {
 	};
 
 	key <AC11> {
-		symbols[group1] = [ semicolon, colon, Delete ],
+		symbols[group1] = [ apostrophe,	quotedbl, Delete ],
 		symbols[group2] = [ Ukrainian_ie, Ukrainian_IE, Delete ]
 	};
 
