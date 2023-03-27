@@ -11,11 +11,11 @@
     ld = log --pretty=oneline --abbrev-commit --since="1am"
     a = "!git status --short | peco | awk '{print $2}' | xargs git add"
     ap = add -p
+    af = "!add_fzf() { git status -s | awk '{print $2}' | fzf -m | xargs git add; }; add_fzf"
     st = status
     br = branch
     bra = branch -a
     open = "!hub browse"
-    # find = "!f() { git log --pretty=format:\"%h %cd [%cn] %s%d\" --date=relative -S'pretty' -S\"$@\" | peco | awk '{print $2}' | xargs -I {} git diff {}^ {}; }; f"
     c = commit
     cm = commit -m
     ca = commit -a
@@ -23,19 +23,28 @@
     co = checkout
     cob = checkout -b
     cop = "!git checkout $(git branch | peco)"
+    cof = "!checkout_fzf() { git branch | fzf | xargs git checkout; }; checkout_fzf"
     ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
     pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD)"
     vrf = "!vim -nw -Q $(git log --pretty=format: --name-only --since='7 days ago' | peco )"
+	  fzf = "!f() { /home/ryba/.scripts/git-fzf/git-fzf.sh $@; }; f"
 [hub]
     protoocol = https
 [github]
     user = rybchynski
 [diff]
-    tool = nvimdiff
-[difftool "nvimdiff"]
-	cmd = nvim -d \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "nvimdiff"]
-	cmd = nvim -d \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+    # tool = nvimdiff
+    tool = meld
+[difftool "meld"]
+    path = /usr/bin/meld
+[difftool]
+    prompt = false
+
+[merge]
+	tool = meld
+#[mergetool "meld"]
+#    cmd = meld \"$LOCAL\" \"$MERGED\" \"$REMOTE\" --output \"$MERGED\"
+[user]
+	name = "Yuriy Rybchynski"
+	email = "yuriyrybchynski.dev@gmail.com"
 

@@ -1,28 +1,39 @@
-#
 #systems
-alias install='brew install'
-alias remove='rm -rf'
+alias install='sudo apt install'
+alias remove='sudo rm -rf'
 alias sremove='sudo rm -rf'
-alias tremove='gshred -uv -n23'
+alias tremove='shred -uv -n27'
 alias s='sudo'
-alias composer="php /usr/local/bin/composer.phar"
-alias firefox='open -a /Applications/Firefox.app'
-alias remove_local_tm='remove_tm.sh'
-alias python="python3.8"
-alias pip="pip3.8"
 alias r="ranger"
-alias zshconfig="code ~/.zshrc"
-
-alias catconfig="sed -e '/^#/d' -e '/^$/d' "
-alias catstringnumber="awk 'END{print NR}' "
-alias openf="open -a ForkLift "
+alias zc="vim ~/.zshrc"
+alias za="vim ~/.zsh_aliases"
+alias tldr="tldr -t base16"
 alias compress="tar -czvf "
-
 alias mv="mv -iv"
 alias cp="cp -riv"
 alias mkdir="mkdir -vp"
 alias c="clear"
 alias stat="stat -x"
+
+# git diff with bat
+alias diff="bat -d"
+
+# remap fucked z
+alias j="z"
+
+# pnpm
+alias pn="pnpm"
+
+# alias for alsamixer
+alias alsa="alsamixer"
+
+# wireguard
+alias wgup="sudo wg-quick up wg0"
+alias wgdown="sudo wg-quick down wg0"
+
+# surfshark vpn
+alias svpnup="sudo surfshark-vpn"
+alias svpndown="sudo surfshark-vpn down"
 
 # ls only hidden files
 alias l.="ls -d .*"
@@ -37,18 +48,9 @@ alias path='echo -e ${PATH//:/\\n}'
 # get last docker container id
 alias d:last="docker ps -lq"
 
-# show/hide hidden files in finder
-alias fshow="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-alias fhide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
-
-# brew update
-alias brewupdate='brew update && brew upgrade --all && brew cask update && brew cleanup && brew cask cleanup'
-
-# macos recursively remove all .DS_Store files
-alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
-
-# macos recursively remote all .node_modules directories
+# remove recursively all .node_modules directories
 alias cleanupnm="find . -name "node_modules" -type d -prune -exec rm -rf '{}' +"
+
 
 # print out the local IP on en0
 alias iplocal='ifconfig en0 | grep --word-regexp inet | awk "{print $2}"'
@@ -62,19 +64,11 @@ alias forecast="curl wttr.in"
 # generate random 20 character password using OpenSSL
 alias randpass="openssl rand -base64 20"
 
-# sudo !!
-alias fuck='sudo $(fc -ln -1)'
-
 # copy/paste terminal output to the clipboard
-alias copy="pbcopy"
-alias paste="pbpaste"
-
-# android
-alias emulator='~/Library/Android/sdk/tools/emulator'
-
-# pass application
-alias p="pass insert -m"
-alias psync="cd ~/.password-store && git push origin master && cd -"
+alias copy="xclip"
+alias pbcopy="xclip -selection clipboard"
+alias paste="xclip -o"
+alias pbpaste="xclip -selection clipboard -o"
 
 #navigation
 alias documents='cd ~/Documents'
@@ -89,29 +83,41 @@ alias my='cd ~/Documents/my'
 alias gocode='cd ~/Documents/code'
 alias play='ncmpcpp'
 
-# bash
-alias lsf="ls -lh | grep -v '^d'"
-alias lsfh="ls -lah | grep -v '^d'"
-alias lsd="ls -lh | grep '^d'"
-
 # docker
 alias dce='docker-compose exec'
 alias dcup='docker-compose up -d'
 alias dstop='docker-compose stop'
 alias dc='docker-compose'
-alias drush='docker-compose exec php drush'
-alias ddrupal='docker-compose exec php drupal'
-alias dcomposer='docker-compose exec php composer'
 alias ds='docker-sync'
 
-#vagrant
-alias vssh='vagrant ssh'
-alias vup='vagrant up'
-alias vpro='vagrant provision'
-alias vhalt='vagrant halt'
+# alias drush='docker-compose exec php drush'
+# alias ddrupal='docker-compose exec php drupal'
+# alias dcomposer='docker-compose exec php composer'
 
-#git
+# ddev
+alias drush='ddev drush'
+alias dcomposer='ddev composer'
+alias xon='ddev xdebug on'
+alias xoff='ddev xdebug off'
+
+# git
 alias g='git'
 alias gitconfig="bat ~/.gitconfig"
 alias lg='lazygit'
+
+# exa
+# alias ll='exa -l -g --icons'
+# alias lla='exa -l -g --icons -a'
+alias ls='exa --oneline --binary'
+alias ll='ls -l -g --git --header --modified --sort=mod --reverse'
+alias lll='ll --accessed --created'
+alias lt='ll --tree --level=2'
+alias lla='lll -a'
+
+# other
+alias xp='xprop | grep "WM_WINDOW_ROLE\|WM_CLASS" && echo "WM_CLASS(STRING) = \"NAME\", \"CLASS\""'
+
+# my super productivity aliases:
+alias open-todo='vim /home/ryba/Documents/libraries/my-zettel/Base/todo.md'
+alias open-work-logs='vim /home/ryba/Documents/libraries/my-zettel/WorkLogs'
 

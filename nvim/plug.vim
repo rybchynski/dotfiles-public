@@ -14,7 +14,6 @@ if has("nvim")
     Plug 'tami5/lspsaga.nvim'
     Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
     Plug 'mlaursen/vim-react-snippets'
-    Plug 'onsails/lspkind-nvim'
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
@@ -22,6 +21,7 @@ if has("nvim")
     Plug 'hoob3rt/lualine.nvim'
     Plug 'preservim/nerdtree'
     Plug 'cohama/lexima.vim'
+    Plug 'onsails/lspkind-nvim'
     Plug 'tpope/vim-fugitive'
     Plug 'honza/vim-snippets'
     Plug 'SirVer/ultisnips'
@@ -35,6 +35,7 @@ if has("nvim")
     Plug 'glepnir/dashboard-nvim'
     Plug 'easymotion/vim-easymotion'
     Plug 'mhinz/vim-signify'
+    Plug 'windwp/nvim-ts-autotag'
 endif
 
 " For JS/JSX
