@@ -1,6 +1,7 @@
 #systems
 alias install='sudo apt install'
 alias remove='sudo rm -rf'
+alias sremove='sudo rm -rf'
 alias tremove='shred -uv -n27'
 alias s='sudo'
 alias r="ranger"
@@ -12,6 +13,7 @@ alias mv="mv -iv"
 alias cp="cp -riv"
 alias mkdir="mkdir -vp"
 alias c="clear"
+alias stat="stat -x"
 
 # git diff with bat
 alias diff="bat -d"
@@ -34,7 +36,8 @@ alias svpnup="sudo surfshark-vpn"
 alias svpndown="sudo surfshark-vpn down"
 
 # ls only hidden files
-alias l.="ls -lsd .*"
+alias l.="ls -d .*"
+alias j=z
 
 # short history mode
 alias h="history"
@@ -47,6 +50,16 @@ alias d:last="docker ps -lq"
 
 # remove recursively all .node_modules directories
 alias cleanupnm="find . -name "node_modules" -type d -prune -exec rm -rf '{}' +"
+
+
+# print out the local IP on en0
+alias iplocal='ifconfig en0 | grep --word-regexp inet | awk "{print $2}"'
+
+# print out the public IP address
+alias ippub="dig +short myip.opendns.com @resolver1.opendns.com"
+
+# display forecast according to your current location.
+alias forecast="curl wttr.in"
 
 # generate random 20 character password using OpenSSL
 alias randpass="openssl rand -base64 20"
@@ -75,6 +88,8 @@ alias dce='docker-compose exec'
 alias dcup='docker-compose up -d'
 alias dstop='docker-compose stop'
 alias dc='docker-compose'
+alias ds='docker-sync'
+
 # alias drush='docker-compose exec php drush'
 # alias ddrupal='docker-compose exec php drupal'
 # alias dcomposer='docker-compose exec php composer'
@@ -84,7 +99,6 @@ alias drush='ddev drush'
 alias dcomposer='ddev composer'
 alias xon='ddev xdebug on'
 alias xoff='ddev xdebug off'
-
 
 # git
 alias g='git'

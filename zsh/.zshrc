@@ -34,6 +34,8 @@ export GOPATH=$GOPATH:/home/ryba/Documents/code/go
  ZSH_THEME="awesomepanda"
 # ZSH_THEME="shellder"
 
+
+
 # jreese, frisk, amuse, agnoster, af-magic, avit, robbyrussell, juanghurtado, norm, bullet-train
 # bira, gnzh, powerlevel9k/powerlevel9k
 
@@ -231,5 +233,6 @@ source $HOME/.fzf_aliases
 source $HOME/.fzf/shell/key-bindings.zsh
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 
 xkbcomp $HOME/.config/xkb/config $DISPLAY && clear
