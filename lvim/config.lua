@@ -47,10 +47,11 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- }
 
 -- include config files:
-require('user.terminal')
-require('user.keymapping')
-require('user.dashboard')
-require('user.visuals')
+require("user.terminal")
+require("user.keymapping")
+require("user.dashboard")
+require("user.visuals")
+
 
 -- Change theme settings
 -- lvim.builtin.theme.options.dim_inactive = true
@@ -76,6 +77,11 @@ lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
+-- Telescope live-grep configurations.
+-- lvim.builtin.telescope.pickers.find_files = nil
+-- lvim.builtin.telescope.pickers.live_grep = nil
+-- lvim.builtin.telescope.defaults.path_display = nil
+
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
@@ -89,7 +95,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "css",
   -- "rust",
   -- "java",
-  "yaml"
+  "yaml",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -137,14 +143,44 @@ lvim.builtin.treesitter.highlight.enable = true
 -- end
 
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
-local formatters = require "lvim.lsp.null-ls.formatters"
-formatters.setup {
+local formatters = require("lvim.lsp.null-ls.formatters")
+formatters.setup({
   {
     command = "prettier",
-    filetypes = { "typescript", "typescriptreact", "vue", "javascript", "css", "scss", "php", "go", "json",
-      "javascriptreact", "markdown", "html" }
+    filetypes = {
+      "typescript",
+      "typescriptreact",
+      "vue",
+      "javascript",
+      "css",
+      "scss",
+      "php",
+      "go",
+      "json",
+      "javascriptreact",
+      "markdown",
+      "html",
+    },
+  },
+  {
+    command = "gofumpt",
+    filetypes = {
+      "go"
+    }
+  },
+  {
+    command = "goimports",
+    filetypes = {
+      "go"
+    }
+  },
+  {
+    command = "golines",
+    filetypes = {
+      "go"
+    }
   }
-}
+})
 -- formatters.setup {
 --   { command = "black", filetypes = { "python" } },
 --   { command = "isort", filetypes = { "python" } },
@@ -179,7 +215,7 @@ formatters.setup {
 
 -- Additional Plugins
 lvim.plugins = {
-  { 'justinmk/vim-sneak' }
+  -- { 'justinmk/vim-sneak' }
 }
 
 require("lvim.lsp.manager").setup("emmet_ls")
@@ -197,3 +233,41 @@ require("lvim.lsp.manager").setup("emmet_ls")
 --     require("nvim-treesitter.highlight").attach(0, "bash")
 --   end,
 -- })
+--
+
+-- Debug configuration (golang)
+lvim.builtin.dap.active = true
+local dap = require("dap")
+dap.adapters.delve = {
+  type = 'server',
+  port = '${port}',
+  executable = {
+    command = 'dlv',
+    args = { 'dap', '-l', '127.0.0.1:${port}' },
+  }
+}
+
+-- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
+dap.configurations.go = {
+  {
+    type = "delve",
+    name = "Debug",
+    request = "launch",
+    program = "${file}"
+  },
+  {
+    type = "delve",
+    name = "Debug test", -- configuration for debugging test files
+    request = "launch",
+    mode = "test",
+    program = "${file}"
+  },
+  -- works with go.mod packages and sub packages
+  {
+    type = "delve",
+    name = "Debug test (go.mod)",
+    request = "launch",
+    mode = "test",
+    program = "./${relativeFileDirname}"
+  }
+}

@@ -251,6 +251,8 @@ bindsym $mod+Shift+8 exec /usr/bin/flameshot gui
 
 # second home monitor
 # exec_always --no-startup-id xrandr --output HDMI2 --mode 1920x1080 --right-of HDMI1
+exec_always --no-startup-id xrandr --output DP-1-2 --mode 1920x1080 --above eDP-1-1
+# exec_always --no-startup-id xrandr --output DP-1-2 --mode 1920x1080
 
 exec --no-startup-id "setxkbmap -layout us,ua"
 exec --no-startup-id "setxkbmap -option 'grp:alt_shift_toggle'"
@@ -281,3 +283,7 @@ exec --no-startup-id guake
 # xev
 # xmodmap -pke
 # alias -- xp (whoch window CLASS)
+
+# Issue with gnome terminal
+# dbus-update-activation-environment --systemd --all
+# then run terminal via d-menu
