@@ -229,11 +229,11 @@ for_window [class="Slack"] border pixel 1
  bindsym XF86AudioPause exec --no-startup-id playerctl pause
 bindsym $mod+Shift+Return exec i3-sensible-terminal -e vim
 
-bindsym $mod+Shift+p exec "i3-nagbar -t warning -m 'You pressed the poweroff shortcut. Do you really want to poweroff?' -b 'Yes, #poweroff' 'systemctl poweroff'"
+# bindsym $mod+Shift+p exec "i3-nagbar -t warning -m 'You pressed the poweroff shortcut. Do you really want to poweroff?' -b 'Yes, #poweroff' 'systemctl poweroff'"
 #bindsym Print exec --no-startup-id "scrot '%F_%H%M%S_$wx$h.png' -e 'mv $f ~/screens/'"
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+s exec --no-startup-id "i3-nagbar -t warning -f -misc-fixed-medium-r-normal-*-15-140-75-75-c-90-iso10646-1 -m 'Вийти з i3? Це беззаперечно зупинить Х-сесію!' -b 'Так, вийти з i3' 'i3-msg exit'"
+# bindsym $mod+Shift+s exec --no-startup-id "i3-nagbar -t warning -f -misc-fixed-medium-r-normal-*-15-140-75-75-c-90-iso10646-1 -m 'Вийти з i3? Це беззаперечно зупинить Х-сесію!' -b 'Так, вийти з i3' 'i3-msg exit'"
 
 # lock screen
 #bindsym $mod+Control+l exec i3lock -c 323232
@@ -251,11 +251,15 @@ bindsym $mod+Shift+8 exec /usr/bin/flameshot gui
 
 # second home monitor
 # exec_always --no-startup-id xrandr --output HDMI2 --mode 1920x1080 --right-of HDMI1
+exec_always --no-startup-id xrandr --output DP-1-2 --mode 1920x1080 --above eDP-1-1
+# exec_always --no-startup-id xrandr --output DP-1-2 --mode 1920x1080
 
-exec --no-startup-id "setxkbmap -layout us,ua"
-exec --no-startup-id "setxkbmap -option 'grp:alt_shift_toggle'"
+# exec --no-startup-id "setxkbmap -layout us,ua"
+# exec --no-startup-id "setxkbmap -option 'grp:alt_shift_toggle'"
 exec "setxkbmap -layout us,ua"
+# exec xkbcomp $HOME/.config/xkb/config $DISPLAY && clear
 exec "setxkbmap -option 'grp:alt_shift_toggle'"
+
 
 # run xorg compositor (aim -- terminal transparency)
 exec --no-startup-id compton
@@ -281,3 +285,7 @@ exec --no-startup-id guake
 # xev
 # xmodmap -pke
 # alias -- xp (whoch window CLASS)
+
+# Issue with gnome terminal
+# dbus-update-activation-environment --systemd --all
+# then run terminal via d-menu
