@@ -89,7 +89,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "javascript",
   "json",
   "lua",
-  -- "python",
+  "python",
   "typescript",
   "tsx",
   "css",
@@ -160,6 +160,7 @@ formatters.setup({
       "javascriptreact",
       "markdown",
       "html",
+      "python"
     },
   },
   {
