@@ -216,6 +216,7 @@ formatters.setup({
 
 -- Additional Plugins
 lvim.plugins = {
+  { 'prisma/vim-prisma' }
   -- { 'justinmk/vim-sneak' }
 }
 
