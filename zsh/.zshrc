@@ -27,11 +27,11 @@ export PATH=$PATH:$GOPATH/bin
 export GOPATH=$GOPATH:/home/ryba/Documents/code/go
 
 # ZSH_THEME="powerlevel9k/powerlevel9k"
-# ZSH_THEME="agnoster"
+ZSH_THEME="agnoster"
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="pygmalion-virtualenv"
 # ZSH_THEME="bira"
- ZSH_THEME="awesomepanda"
+ # ZSH_THEME="awesomepanda"
 # ZSH_THEME="shellder"
 
 
