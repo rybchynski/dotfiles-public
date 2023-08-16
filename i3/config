@@ -101,7 +101,7 @@ bindsym $mod+3 workspace 3:code
 bindsym $mod+4 workspace 4:msg
 bindsym $mod+5 workspace 5:media
 #bindsym $mod+6 workspace 6:misc
-bindsym $mod+7 workspace 7:obsi
+bindsym $mod+7 workspace 7:md
 #bindsym $mod+8 workspace 8:misc
 #bindsym $mod+9 workspace 9:misc
 bindsym $mod+0 workspace 10:term
@@ -113,7 +113,7 @@ bindsym $mod+Shift+3 move container to workspace 3:code
 bindsym $mod+Shift+4 move container to workspace 4:msg
 bindsym $mod+Shift+5 move container to workspace 5:media
 #bindsym $mod+Shift+6 move container to workspace 6:misc
-bindsym $mod+Shift+7 move container to workspace 7:obsi
+bindsym $mod+Shift+7 move container to workspace 7:md
 #bindsym $mod+Shift+8 move container to workspace 8:misc
 #bindsym $mod+Shift+9 move container to workspace 9:misc
 bindsym $mod+Shift+0 move container to workspace 10:term
@@ -204,11 +204,13 @@ for_window [class="()"] focus
 assign [class="Doublecmd"] 1:main
 assign [class="Pcmanfm"] 1:main
 assign [class="Nautilus"] 1:main
-assign [class="obsidian"] 7:obsi
+assign [class="obsidian"] 7:md
+assign [class="Anki"] 7:md
 
 # for_window [class="Skype"] floating enable
 for_window [class="Pcmanfm"] floating enable border pixel 1
 for_window [class="Nautilus"] floating enable border pixel 1
+for_window [class="Anki"] floating enable border pixel 1
 for_window [class="feh"] floating enable border pixel 1
 for_window [class="Eog"] floating enable border pixel 1
 for_window [class="Totem"] floating enable border pixel 1
@@ -251,7 +253,7 @@ bindsym $mod+Shift+8 exec /usr/bin/flameshot gui
 
 # second home monitor
 # exec_always --no-startup-id xrandr --output HDMI2 --mode 1920x1080 --right-of HDMI1
-exec_always --no-startup-id xrandr --output DP-1-2 --mode 1920x1080 --above eDP-1-1
+exec_always --no-startup-id xrandr --output DP-1-3 --mode 1920x1080 --above eDP-1-1
 # exec_always --no-startup-id xrandr --output DP-1-2 --mode 1920x1080
 
 # exec --no-startup-id "setxkbmap -layout us,ua"
