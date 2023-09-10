@@ -34,7 +34,8 @@ floating_modifier $mod
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal -e /bin/zsh
-bindsym $mod+Return exec gnome-terminal -e /bin/zsh
+# bindsym $mod+Return exec gnome-terminal -e /bin/zsh
+bindsym $mod+Return exec urxvt -e /usr/bin/zsh
 
 # kill focused window
 bindsym $mod+q kill
@@ -192,7 +193,7 @@ assign [class="firefox"] 2:www
  assign [class="Slack"] 4:msg
  assign [class="TelegramDesktop"] 4:msg
 #assign [title="finch"] 4:msg
-# assign [class="URxvt"] 10:term
+assign [class="URxvt"] 10:term
 # assign [class="gnome-terminal"] 10:term
 assign [class="Gnome-terminal"] 10:term
 assign [class="Gedit"] 3:code
@@ -212,9 +213,10 @@ for_window [class="Pcmanfm"] floating enable border pixel 1
 for_window [class="Nautilus"] floating enable border pixel 1
 for_window [class="Anki"] floating enable border pixel 1
 for_window [class="feh"] floating enable border pixel 1
-for_window [class="Eog"] floating enable border pixel 1
-for_window [class="Totem"] floating enable border pixel 1
+# for_window [class="Eog"] floating enable border pixel 1
+# for_window [class="Totem"] floating enable border pixel 1
 for_window [class="Gnome-terminal"] border pixel 1 
+for_window [class="URxvt"] border pixel 1 
 for_window [class="TelegramDesktop"] border pixel 1 
 for_window [class="Slack"] border pixel 1 
 # for_window [class="Mplayer"] floating enable
@@ -253,7 +255,8 @@ bindsym $mod+Shift+8 exec /usr/bin/flameshot gui
 
 # second home monitor
 # exec_always --no-startup-id xrandr --output HDMI2 --mode 1920x1080 --right-of HDMI1
-exec_always --no-startup-id xrandr --output DP-1-3 --mode 1920x1080 --above eDP-1-1
+# exec_always --no-startup-id xrandr --output DP-1-3 --mode 1920x1080 --above eDP-1-1
+exec_always --no-startup-id xrandr --output DP-1-2 --mode 1920x1080 --above eDP-1-1
 # exec_always --no-startup-id xrandr --output DP-1-2 --mode 1920x1080
 
 # exec --no-startup-id "setxkbmap -layout us,ua"
