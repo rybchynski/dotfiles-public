@@ -236,3 +236,8 @@ source $HOME/.fzf/shell/key-bindings.zsh
 
 
 xkbcomp $HOME/.config/xkb/config $DISPLAY && clear
+
+# pnpm
+export PNPM_HOME="~/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
