@@ -38,11 +38,9 @@
 *.color15: #fdf6e3
 
 ! Fonts.
-XTerm*renderFont: true
-URxvt.font: \
-            xft:JetBrainsMono Nerd Font:style=Regular:size=14:antialias=true:hinting=true:autohint=true,
-            xft:agave NF:style=r:size=14 
-URxvt.boldFont: xft:JetBrainsMono Nerd Font:style=Bold:size=14:antialias=true
+! xft:JetBrainsMono Nerd Font:style=Regular:size=13:antialias=true:hinting=true:autohint=true,
+! XTerm*renderFont: true
+URxvt.font: xft:JetBrainsMono\ Nerd\ Font\ Mono:style=Regular:size=13,
 
 
 URxvt.scrollBar: false
@@ -78,6 +76,7 @@ URxvt.tabbed.reopen-on-close: yes
 URxvt.keysym.Control-t: perl:tabbedex:new_tab
 URxvt.keysym.Control-e: perl:tabbedex:rename_tab
 URxvt.keysym.Control-w: perl:tabbedex:tab_destroy
+URxvt.keysym.Control-q: perl:tabbedex:kill_tab
 URxvt.keysym.Shift-Right: perl:tabbedex:next_tab
 URxvt.keysym.Shift-Left: perl:tabbedex:prev_tab
 URxvt.tabbed.no-tabbedex-keys: true
