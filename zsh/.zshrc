@@ -237,6 +237,9 @@ source $HOME/.fzf/shell/key-bindings.zsh
 
 xkbcomp $HOME/.config/xkb/config $DISPLAY && clear
 
+# add rofi scripts to the PATH:
+export PATH=$HOME/.config/rofi/scripts:$PATH
+
 # pnpm
 export PNPM_HOME="~/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
