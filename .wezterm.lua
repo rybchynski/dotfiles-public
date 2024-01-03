@@ -13,7 +13,12 @@ end
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = "ayu"
+-- config.color_scheme = "ayu"
+config.color_scheme = "nord"
+-- config.color_scheme = "Solarized Dark - Patched"
+-- config.color_scheme = "Dracula (Official)"
+-- config.color_scheme = "Palenight (Gogh)"
+
 -- config.font = wezterm.font("JetBrainsMono Nerd Font Mono")
 config.font = wezterm.font("Monaspace Krypton")
 config.font_size = 12
@@ -23,6 +28,8 @@ config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 
 config.window_background_opacity = 0.9
+
+config.animation_fps = 1
 
 -- Custom keymaps:
 config.keys = {
