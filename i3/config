@@ -290,9 +290,9 @@ exec --no-startup-id compton
 
 exec --no-startup-id nitrogen --restore
 #exec --no-startup-id kupfer
-exec --no-startup-id parcellite -n
+exec --no-startup-id parcellite
 # exec --no-startup-id xmodmap -e "pointer = 3 2 1";
-exec --no-startup-id guake&
+exec --no-startup-id guake
 
 
 # dependencies:
