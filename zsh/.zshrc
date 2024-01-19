@@ -142,13 +142,13 @@ function myip()
     extIp=$(dig +short myip.opendns.com @resolver1.opendns.com)
 
     printf "Wireless IP: "
-    MY_IP=$(/sbin/ifconfig wlp41s0 | awk '/inet/ { print $2 } ' |
+    MY_IP=$(/sbin/ifconfig wlp0s20f3 | awk '/inet/ { print $2 } ' |
       sed -e s/addr://)
     echo ${MY_IP:-"Not connected"}
 
 
     printf "Wired IP: "
-    MY_IP=$(/sbin/ifconfig enp42s0 | awk '/inet/ { print $2 } ' |
+    MY_IP=$(/sbin/ifconfig lo | awk '/inet/ { print $2 } ' |
       sed -e s/addr://)
     echo ${MY_IP:-"Not connected"}
 
