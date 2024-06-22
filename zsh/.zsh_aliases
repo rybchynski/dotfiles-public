@@ -36,8 +36,8 @@ alias wgdown="sudo wg-quick down wg0"
 alias svpnup="sudo surfshark-vpn"
 alias svpndown="sudo surfshark-vpn down"
 
-# ls only hidden files
-alias l.="ls -d .*"
+# gcg vpn
+alias gcgvpn="sudo openvpn /etc/openvpn/client/gcgn.ovpn"
 
 # short history mode
 alias h="history"
@@ -45,12 +45,8 @@ alias h="history"
 # show $PATH
 alias path='echo -e ${PATH//:/\\n}'
 
-# get last docker container id
-alias d:last="docker ps -lq"
-
 # remove recursively all .node_modules directories
 alias cleanupnm="find . -name "node_modules" -type d -prune -exec rm -rf '{}' +"
-
 
 # print out the local IP on en0 or lo
 alias iplocal='ifconfig lo | grep --word-regexp inet | awk "{print $2}"'
@@ -113,11 +109,25 @@ alias lg='lazygit'
 # exa
 # alias ll='exa -l -g --icons'
 # alias lla='exa -l -g --icons -a'
-alias ls='exa --oneline --binary'
-alias ll='ls -l -g --git --header --modified --sort=mod --reverse'
-alias lll='ll --accessed --created'
-alias lt='ll --tree --level=2'
-alias lla='lll -a'
+# alias ls='exa --oneline --binary'
+# alias ll='ls -l -g --git --header --modified --sort=mod --reverse'
+# alias lll='ll --accessed --created'
+# alias lt='ll --tree --level=2'
+# alias lla='lll -a'
+
+# eza
+# list only direcotries
+alias ld='eza -lD'
+# list only files
+alias lf='eza -lf --color=always | grep -v /'
+# list only hidden files (no directories)
+alias lh='eza -dl .* --group-directories-first'
+# list everything with directories first
+alias ll='eza -al --group-directories-first'
+# list only files sorted by size
+alias ls='eza -alf --color=always --sort=size | grep -v /'
+# list everything sorted by time updated
+alias lt='eza -al --sort=modified'
 
 # other
 alias xp='xprop | grep "WM_WINDOW_ROLE\|WM_CLASS" && echo "WM_CLASS(STRING) = \"NAME\", \"CLASS\""'
