@@ -21,18 +21,17 @@ export PATH="$PATH:$(du "$HOME/.scripts" | cut -f2 | tr '\n' ':' | sed 's/:*$//'
 # Golang specific
 export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin
-
 export GOPATH=/home/ryba/golib
 export PATH=$PATH:$GOPATH/bin
 export GOPATH=$GOPATH:/home/ryba/Documents/code/go
 
 # ZSH_THEME="powerlevel9k/powerlevel9k"
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="pygmalion-virtualenv"
 # ZSH_THEME="bira"
  # ZSH_THEME="awesomepanda"
-# ZSH_THEME="shellder"
+ZSH_THEME="shellder"
 
 
 
@@ -114,25 +113,35 @@ prompt_context() {
   fi
 }
 
-# fzf configuration.
-# --prompt='∼ ' --pointer='▶' --marker='✓'
+# export FZF_DEFAULT_OPTS="
+# --layout=reverse
+# --info=inline
+# --height=50%
+# --multi
+# --border
+# --preview-window=:hidden
 # --color='hl:148,hl+:154,pointer:032,marker:010,bg+:237,gutter:008'
-export FZF_DEFAULT_OPTS="
---layout=reverse
---info=inline
---height=50%
---multi
---border
---preview-window=:hidden
---color='hl:148,hl+:154,pointer:032,marker:010,bg+:237,gutter:008'
---prompt='∼ ' --pointer='▶' --marker='✓'
---bind '?:toggle-preview'
---bind 'ctrl-a:select-all'
---bind 'ctrl-c:execute-silent(echo {+} | xclip -selection clipboard)'
---bind 'ctrl-e:execute(echo {+} | xargs -o vim)'
---bind 'ctrl-v:execute(code {+})'
---bind 'ctrl-s:execute(subl {+})'
-"
+# --prompt='∼ ' --pointer='▶' --marker='✓'
+# --bind '?:toggle-preview'
+# --bind 'ctrl-a:select-all'
+# --bind 'ctrl-c:execute-silent(echo {+} | xclip -selection clipboard)'
+# --bind 'ctrl-e:execute(echo {+} | xargs -o vim)'
+# --bind 'ctrl-v:execute(code {+})'
+# --bind 'ctrl-s:execute(subl {+})'
+# "
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+
+_fzf_compgen_path() {
+  fd --hidden --exclude .tig . "$1"
+}
+
+_fzf_compgen_dir() {
+  fd --type=d --hidden --exclude .tig . "$1"
+}
+
+source ~/fzf-git.sh/fzf-git.sh
 
 # export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
 
@@ -244,3 +253,5 @@ export PATH=$HOME/.config/rofi/scripts:$PATH
 export PNPM_HOME="~/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+# export VOLTA_HOME="$HOME/.volta"
+# export PATH="$VOLTA_HOME/bin:$PATH"
