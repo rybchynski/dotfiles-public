@@ -34,7 +34,7 @@ set $ws10 "10"
 # font pango:DejaVu Sans Mono 10
 # font xft:Droid Sans Mono 9
 # font xft:Comic Shanns 12
-font xft:Monaspace Krypton 11
+font xft:Monaspace Krypton 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -312,9 +312,9 @@ bindsym $mod+Shift+4 exec /usr/bin/flameshot gui
 # exec_always --no-startup-id xrandr --output eDP-1-1 --mode 1920x1080
 
 # for nvidia video
-exec_always --no-startup-id xrandr --output DP-1-2 --mode 1920x1080 --above eDP-1-1
+# exec_always --no-startup-id xrandr --output DP-1-2 --mode 1920x1080 --above eDP-1-1
 # for integrated video
-# exec_always --no-startup-id xrandr --output DP-2 --mode 1920x1080 --above eDP-1
+exec_always --no-startup-id xrandr --output DP-2 --mode 1920x1080 --above eDP-1
 
 exec_always --no-startup-id "setxkbmap -layout us,ua"
 # exec --no-startup-id "setxkbmap -option 'grp:alt_shift_toggle'"
