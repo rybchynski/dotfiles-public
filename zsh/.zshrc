@@ -4,6 +4,7 @@ export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="$PATH:$HOME/.drupal/drupal_code_standards/vendor/bin"
 export PATH="$PATH:$HOME/.yarn/bin"
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.nvm/versions/node/v20.12.2/lib/node_modules"
 export CDPATH="$PATH:$HOME/Documents/code/"
 export TERM="xterm-256color"
 export LANG=en_US.UTF-8
@@ -21,50 +22,26 @@ export PATH="$PATH:$(du "$HOME/.scripts" | cut -f2 | tr '\n' ':' | sed 's/:*$//'
 # Golang specific
 export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin
-export GOPATH=/home/ryba/golib
+export GOPATH=$HOME/golib
 export PATH=$PATH:$GOPATH/bin
-export GOPATH=$GOPATH:/home/ryba/Documents/code/go
+export GOPATH=$GOPATH:$HOME/Documents/code/go
 
 # ZSH_THEME="powerlevel9k/powerlevel9k"
 # ZSH_THEME="agnoster"
-# ZSH_THEME="robbyrussell"
+ZSH_THEME="robbyrussell"
 # ZSH_THEME="pygmalion-virtualenv"
 # ZSH_THEME="bira"
  # ZSH_THEME="awesomepanda"
-ZSH_THEME="shellder"
+# ZSH_THEME="shellder"
 
-
-
-# jreese, frisk, amuse, agnoster, af-magic, avit, robbyrussell, juanghurtado, norm, bullet-train
-# bira, gnzh, powerlevel9k/powerlevel9k
 
 DISABLE_MAGIC_FUNCTIONS=true
 
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(
   colored-man-pages
   zsh-autosuggestions
   zsh-syntax-highlighting
   virtualenv
-  z
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -95,9 +72,6 @@ extract () {
 
 export EDITOR='nvim'
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 ###-tns-completion-start-###
 if [ -f $HOME/.tnsrc ]; then 
     source $HOME/.tnsrc 
@@ -113,22 +87,6 @@ prompt_context() {
   fi
 }
 
-# export FZF_DEFAULT_OPTS="
-# --layout=reverse
-# --info=inline
-# --height=50%
-# --multi
-# --border
-# --preview-window=:hidden
-# --color='hl:148,hl+:154,pointer:032,marker:010,bg+:237,gutter:008'
-# --prompt='∼ ' --pointer='▶' --marker='✓'
-# --bind '?:toggle-preview'
-# --bind 'ctrl-a:select-all'
-# --bind 'ctrl-c:execute-silent(echo {+} | xclip -selection clipboard)'
-# --bind 'ctrl-e:execute(echo {+} | xargs -o vim)'
-# --bind 'ctrl-v:execute(code {+})'
-# --bind 'ctrl-s:execute(subl {+})'
-# "
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
@@ -141,9 +99,8 @@ _fzf_compgen_dir() {
   fd --type=d --hidden --exclude .tig . "$1"
 }
 
-source ~/fzf-git.sh/fzf-git.sh
+source ~/.fzf-git.sh/fzf-git.sh
 
-# export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
 
 # print my IP address
 function myip()
@@ -174,16 +131,6 @@ d:bash () {
   fi
 }
 
-# With no argument runs a bash terminal in a new ubuntu container(could be specified any image) with current directory content mapped to '/app' inside container. If an image is passed to the first argument this one will run. If multiples arguments append to the image.
-d:run () {
-  if [ $# == 0 ]; then
-    docker run -it -v `pwd`:/app -w /app --rm buildpack-deps:trusty bash
-  elif [ $# == 1 ]; then
-    docker run -it -v `pwd`:/app -w /app --rm $1 
-  else
-    docker run -it -v `pwd`:/app -w /app --rm $1 ${@:2}
-  fi
-}
 # WORK WITH GIT.
 # git blame -- custom function.
 gblame () {
@@ -233,7 +180,30 @@ fcs() {
   local commits commit
   commits=$(git log --color=always --pretty=oneline --abbrev-commit --reverse) &&
   commit=$(echo "$commits" | fzf --tac +s +m -e --ansi --reverse) &&
-  echo -n $(echo "$commit" | sed "s/ .*//")
+  echo -n $(echo "$commit" | sed "s/ .*//") | pbcopy
+}
+
+# yazi
+function yy() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    cd -- "$cwd"
+  fi 
+  rm -f -- "$tmp"
+}
+
+function zshow() {
+  echo '--------------------------------------------'
+  echo 'yy      -- run yazi file manager'
+  echo 'myip    -- display my IP information'
+  echo 'd:bash  -- exec to the docker bash container'
+  echo 'gblame  -- git blame in terminal'
+  echo 'fshow   -- git commit browser'
+  echo 'fcoc    -- checkout to git commit'
+  echo 'fcs     -- select and copy git commit hash'
+  echo '--------------------------------------------'
+  
 }
 
 source $HOME/.fzf_aliases
@@ -253,5 +223,16 @@ export PATH=$HOME/.config/rofi/scripts:$PATH
 export PNPM_HOME="~/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
 # export VOLTA_HOME="$HOME/.volta"
 # export PATH="$VOLTA_HOME/bin:$PATH"
+eval "$(oh-my-posh init zsh --config '~/.oh-my-posh/aliens.omp.json')"
+eval "$(zoxide init zsh)"
+
+
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

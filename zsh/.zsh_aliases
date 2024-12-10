@@ -5,7 +5,6 @@ alias remove='rm -rf'
 alias sremove='sudo rm -rf'
 alias tremove='shred -uv -n27'
 alias s='sudo'
-alias r="ranger"
 alias zc="vim ~/.zshrc"
 alias za="vim ~/.zsh_aliases"
 alias tldr="tldr -t base16"
@@ -38,6 +37,8 @@ alias svpndown="sudo surfshark-vpn down"
 
 # gcg vpn
 alias gcgvpn="sudo openvpn /etc/openvpn/client/gcgn.ovpn"
+alias runvpn="~/Documents/work/gcg/vpn_scripts/./gcards_ovpn_linux.sh /etc/openvpn/client/gcgn.ovpn"
+alias stopvpn="~/Documents/work/gcg/vpn_scripts/./kill_openvpn.sh"
 
 # short history mode
 alias h="history"
@@ -53,6 +54,7 @@ alias iplocal='ifconfig lo | grep --word-regexp inet | awk "{print $2}"'
 
 # print out the public IP address
 alias ippub="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ping="ping 8.8.8.8"
 
 # display forecast according to your current location.
 alias forecast="curl 'wttr.in/Lutsk?m'"
@@ -133,6 +135,7 @@ alias lt='eza -al --sort=modified'
 alias xp='xprop | grep "WM_WINDOW_ROLE\|WM_CLASS" && echo "WM_CLASS(STRING) = \"NAME\", \"CLASS\""'
 
 # my super productivity aliases:
-alias open-todo='vim /home/ryba/Documents/libraries/my-zettel/Base/todo.md'
-alias open-work-logs='vim /home/ryba/Documents/libraries/my-zettel/WorkLogs'
+alias open-todo='vim ~/Documents/libraries/my-zettel/Base/todo.md'
+alias open-work-logs='vim ~/Documents/libraries/my-zettel/WorkLogs'
 
+alias hosts='sudo vim /etc/hosts'

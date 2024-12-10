@@ -21,7 +21,7 @@ config.color_scheme = "ayu"
 
 -- config.font = wezterm.font("JetBrainsMono Nerd Font Mono")
 config.font = wezterm.font("Monaspace Krypton")
-config.font_size = 12
+config.font_size = 11
 
 -- Tabs:
 config.use_fancy_tab_bar = false
